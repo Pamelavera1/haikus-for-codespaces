@@ -1,0 +1,73 @@
+
+
+*{
+    margen: 0;
+}
+
+cuerpo{
+    imagen de fondo: gradiente lineal (135 grados, # 00e7d4, # 505488, # ef3f80, # 161569, # ef3f80, # 505488, # 00E7D4);
+    tamaño de fondo: 500%;
+    animacion: fanimado 60s infinite;
+}
+.contenedor{
+
+    ancho: 100vw;
+    altura: 100vh;
+    alineación de texto: centro;
+}
+
+pags{
+    tamaño de fuente: xx-grande;
+    relleno: 5%;
+}
+
+botón{
+    tamaño de fuente: xx-grande;
+    relleno: 0,75 em;
+}
+
+#yesBtn{
+    transformar: traducir (-100%, 0);
+}
+
+#noBtn{
+    posición: absoluta;
+}
+
+animación de @keyframes {
+    0% {
+        transformar: escala(0);
+    }
+
+    100% {
+        transformar: escala(1);
+    }
+}
+
+@keyframes fanimado{
+    0%{
+        imagen de fondo: 0% 50%;
+    }
+    50%{
+        posición de fondo: 100% 50%;
+    }
+    100%{
+        posición de fondo: 0% 50%;
+    }
+}
+const yesBtn = document.querySelector('#yesBtn');
+
+yesBtn.addEventListener('click',function () {
+    alert('SABIA QUE DIRIAS SI')
+    alert('ME HACES LA PERSONA MAS FELIZ')
+});
+
+const noBtn = document.querySelector('#noBtn');
+
+noBtn.addEventListener('mouseover', function () {
+    const randomX = parseInt(Math.random()*100);
+    const randomY = parseInt(Math.random()*100);
+    noBtn.style.setProperty('top',randomY+'%');
+    noBtn.style.setProperty('left',randomX+'%');
+    noBtn.style.setProperty('transform',`translate(-${randomX}%,-${randomY}%)`);
+})
